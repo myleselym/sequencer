@@ -1,0 +1,95 @@
+/* Variables */
+:root {
+    --active-column-color: rgba(255, 0, 255);
+    --active-row-color: rgb(255, 0, 255);
+    --active-cell-color: rgba(255, 255, 255, 0.913);
+    --font-color: rgb(0, 0, 0);
+    --scale-tone-color: rgb(0, 174, 255);
+    --cell-hover-color: rgba(255, 255, 255, 0.913);
+    --cell-hover-font-color: rgb(0, 0, 0);
+    --row-col-hover-color: rgb(255, 255, 255);
+}
+
+
+/* Grid */
+
+#grid {
+    display: flex;
+    gap: .7mm;
+}
+.grid-col {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: .7mm;
+}
+.grid-cell {
+    width: 13mm;
+    height: 13mm;
+    background-color: rgb(255, 255, 255, .1);
+    font-size: .9rem;
+    border: solid .1mm #FFF;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.grid-cell:hover {
+    color: var(--cell-hover-font-color);
+    background-color: var(--cell-hover-color);
+}
+
+.grid-cell, .scale-tone-cell {
+    border-radius: 5px;
+}
+.scale-tone-cell {
+    border-color: var(--scale-tone-color);
+}
+
+.focused-cell {
+    border-color: white;
+    box-shadow: 0 0 0 2px var(--active-column-color), inset 0 0 10px var(--active-column-color) !important;
+}
+.focused-row {
+    box-shadow: 0 0 10px 2px var(--active-row-color), inset 0 0 10px var(--active-row-color) !important;
+
+}
+.active-row {
+    box-shadow: 0 0 10px 2px var(--active-row-color), inset 0 0 10px var(--active-row-color) !important;
+}
+
+.active-cell {
+    color: var(--font-color);
+    background-color: var(--active-cell-color);
+    border-color: var(--active-cell-color);
+}
+
+.hover-row-col {
+    box-shadow: 0 0 10px 2px var(--row-col-hover-color);
+}
+
+/* Grid Controls */
+
+#grid-controls {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    flex-basis: 100%;
+}
+
+label {
+    font-family: sans-serif;
+    font-size: 1rem;
+    padding-right: 10px;
+}
+
+select {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    width: 150px; /* Ensure the select box has enough width */
+}
+
+option {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}

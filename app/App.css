@@ -1,0 +1,14 @@
+select {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    color: black;
+    border: none;
+    cursor: pointer;
+}
+
+select > option {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+}

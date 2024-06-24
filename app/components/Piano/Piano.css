@@ -1,0 +1,99 @@
+/* Variables */
+:root {
+    --active-color: rgba(255, 0, 255);
+    --scale-tone-color: rgb(0, 174, 255);
+    --white-key-hover-color: rgba(255, 255, 255, 0.758);
+    --black-key-hover-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Piano Container */
+#piano {
+    position: relative;
+    display: flex;
+    width: fit-content;
+}
+/* Octave Span*/
+.octave {
+    display: flex;
+    position: relative;
+}
+/* Piano Keys */
+.white-key {
+    background-color: rgb(255, 255, 255);
+    border: .5mm solid black;
+    width: 23.45mm;
+    height: 150mm;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.black-key {
+    position: absolute;
+    background-color: black;
+    border: 1px solid black;
+    box-shadow: inset 0 -5px 1px rgba(255, 255, 255, 0.3);
+    width: 13.7mm;
+    height: 90mm;
+    top: 0;
+}
+.white-key, .black-key {
+    border-radius:0 0 10px 10px;
+}
+
+/*Keys Included In Scale*/
+.white-key.scale-tone {
+    box-shadow:inset 0 0 5px 3px var(--scale-tone-color);
+}
+.white-key.scale-tone:hover {
+    box-shadow:0 0 5px 2px var(--white-key-hover-color), inset 0 0 30px 4px var(--scale-tone-color);
+}
+.black-key.scale-tone {
+    box-shadow: 0 2px 1px 2px var(--scale-tone-color), inset 0 0 10px var(--scale-tone-color);
+}
+.black-key.scale-tone:hover {
+    outline: solid 1px var(--scale-tone-color);
+    box-shadow: 0 0 20px var(--scale-tone-color);
+}
+
+.scale-tone.active-piano-key {
+    box-shadow: 0 2px 0 2px var(--active-color), inset 0 0 10px var(--active-color);
+}
+
+/*Key Hover Effects*/
+.white-key:hover {
+    box-shadow: inset 0 0 5px 1px var(--white-key-hover-color);
+}
+n[m].black-key:hover {
+    box-shadow: inset 0 0 20px var(--black-key-hover-color);
+}
+
+/* White Key Click Effects */
+.white-key:active {
+    background-color: var(--active-color);
+    outline: solid 1px var(--active-color);
+}
+/* Black Key Click Effects */
+.black-key:active {
+    background-color: var(--active-color);
+}
+
+/* Black Key Positions*/
+.black-key.C-sharp {
+    left: 13.7mm;
+}
+.black-key.D-sharp {
+    left: 41.1mm;
+}
+.black-key.F-sharp {
+    left: 82.2mm;
+}
+.black-key.G-sharp {
+    left: 109.6mm;
+}
+.black-key.A-sharp {
+    left: 137mm;
+}
+
+.active-piano-key {
+    box-shadow: 0 2px 0 2px var(--active-color), inset 0 0 10px var(--active-color);
+}
